@@ -3,19 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rishab Kolan: Personal site and portfolio</title>
+    <title>Personal site and portfolio | Rishab Kolan</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <a href="./">Home</a>
+    <nav aria-label="Main navigation">
+        <a href="./" class="current" aria-current="page">Home</a>
         <a href="projects/">Projects</a>
         <a href="contact/">Contact</a>
         <a href="resume/">Resume</a>
-        <a href="https://github.com/rkolan-alt" target="_blank">GitHub</a>
+        <a href="https://github.com/rkolan-alt" target="_blank" rel="noopener noreferrer">GitHub</a>
     </nav>
-<h1>Rishab Kolan</h1>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, error a repellat tempore quod unde. Soluta nobis minus quasi? Accusamus repellendus facere nam provident sed impedit aspernatur numquam. Tempore, explicabo.</p>
-    <img src="images/IMG_2D7B44FCDB10-1.jpeg" alt="random ahh image">
+    <main>
+        <p class="eyebrow">Data science · Software · Visualization</p>
+        <h1>Rishab Kolan</h1>
+        <p class="intro">I’m a Data Science student at UC San Diego, building tools that turn data into useful experiences—from personalized music discovery to biosignal-driven gesture recognition.</p>
+        <div class="home-links">
+            <a href="projects/">Explore my projects →</a>
+            <a href="resume/">View my resume →</a>
+            <a href="contact/">Get in touch →</a>
+        </div>
+        <section class="home-section">
+            <h2>What I’m working on</h2>
+            <p>At UC San Diego Health, I analyze bacteria and metabolite data to study liver fibrosis. My work combines predictive modeling, feature importance, and data visualization to understand relationships in patient data.</p>
+            <p>I also built <a href="https://github.com/rkolan-alt/Posterboy">Posterboy</a>, a full-stack application that connects Spotify listening history with personalized album posters and color-based recommendations.</p>
+        </section>
+        <section class="home-section">
+            <h2>Learning through data</h2>
+            <p>This portfolio brings together my projects, experience, and work for DSC 106: Data Visualization.</p>
+            <figure class="notes">
+                <img src="images/IMG_2D7B44FCDB10-1.jpeg" alt="Handwritten columns of numbers on graph paper, totaling 20 and 100." width="712" height="616">
+                <figcaption>A small snapshot of my handwritten notes.</figcaption>
+            </figure>
+        </section>
+    </main>
+    <footer>Rishab Kolan · Data Science at UC San Diego</footer>
 </body>
 </html>

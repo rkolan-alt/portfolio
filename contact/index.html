@@ -7,40 +7,25 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <nav>
+    <nav aria-label="Main navigation">
         <a href="../">Home</a>
         <a href="../projects/">Projects</a>
-        <a href="./">Contact</a>
+        <a href="../contact/" class="current" aria-current="page">Contact</a>
         <a href="../resume/">Resume</a>
-        <a href="https://github.com/rkolan-alt" target="_blank">GitHub</a>
+        <a href="https://github.com/rkolan-alt" target="_blank" rel="noopener noreferrer">GitHub</a>
     </nav>
-    <h1>Contact</h1>
-    <form
-        action="mailto:rkolan@ucsd.edu"
-        method="POST"
-        enctype="text/plain"
-    >
-        <label>
-            Email
-            <input
-                name="email"
-                type="email"
-                value="visitor@example.com"
-            >
-        </label>
-        <label>
-            Subject
-            <input
-                name="subject"
-                value="Hello from your website"
-            >
-        </label>
-        <label>
-            Message
-            <textarea name="body" rows="6" cols="40">I found your website and wanted to get in touch.</textarea>
-        </label>
-
-        <button>Send message</button>
-    </form>
+    <main>
+        <h1>Contact</h1>
+        <p class="intro">Have a question about my work or a project in mind? Let’s connect.</p>
+        <p>Contact me on <a href="https://www.linkedin.com/in/rishab-kolan-721435272/">LinkedIn</a> or explore my work on <a href="https://github.com/rkolan-alt">GitHub</a>.</p>
+        <form action="mailto:" method="POST" enctype="text/plain">
+            <label>Email <input name="email" type="email" autocomplete="email" placeholder="you@example.com" required></label>
+            <label>Subject <input name="subject" placeholder="What would you like to discuss?" required></label>
+            <label>Message <textarea name="body" rows="6" placeholder="Write your message here…" required></textarea></label>
+            <button type="submit">Open email draft</button>
+        </form>
+        <p>This form opens a draft in your email app with the recipient left blank. To contact me directly, use LinkedIn above.</p>
+    </main>
+    <footer>Rishab Kolan · Data Science at UC San Diego</footer>
 </body>
 </html>

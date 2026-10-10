@@ -1,6 +1,82 @@
-body {
-  /* Set line height to 1.5 times the font size
-	   and use the OS’s UI font as the website font
-	 */
-  font: 100%/1.5 system-ui;
+:root {
+  --color-accent: oklch(49% 0.12 185);
+  --color-border: oklch(80% 0.03 200);
+  --color-muted: oklch(43% 0.025 200);
+  --color-surface: oklch(97% 0.012 185);
+  accent-color: var(--color-accent);
+  color: oklch(25% 0.025 200);
+  background: oklch(99% 0.005 185);
+}
+
+* { box-sizing: border-box; }
+body { font: 100%/1.5 system-ui, sans-serif; max-width: 100ch; margin-inline: auto; padding: 1rem; }
+nav { display: flex; margin-bottom: 2.5rem; border-bottom: 1px solid var(--color-border); }
+nav ul, nav li { display: contents; }
+nav a { flex: 1; min-width: 0; text-decoration: none; color: inherit; text-align: center; padding: 0.5em; border-bottom: 0.4em solid transparent; }
+nav a.current { border-bottom-color: var(--color-border); }
+nav a:hover { border-bottom-color: var(--color-accent); background-color: oklch(from var(--color-accent) 95% 0.025 h); }
+a { color: var(--color-accent); overflow-wrap: anywhere; }
+a:hover { text-decoration-thickness: 0.15em; }
+:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 4px; }
+h1, h2, h3, h4, h5, h6 { line-height: 1.1; text-wrap: balance; }
+h1 { font-size: clamp(2.5rem, 8vw, 4rem); margin-block: 0 1rem; letter-spacing: -0.04em; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.15rem; }
+img { display: block; max-width: 100%; height: auto; }
+main { margin-bottom: 3rem; }
+footer { padding-block: 1rem; border-top: 1px solid var(--color-border); color: var(--color-muted); font-size: 0.875rem; }
+.eyebrow { color: var(--color-accent); font-weight: 650; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.8rem; }
+.intro { font-size: 1.2rem; max-width: 65ch; color: var(--color-muted); }
+.home-links { display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; margin-block: 1.5rem 2.5rem; }
+.home-section { padding-block: 1.5rem; border-top: 1px solid var(--color-border); }
+.notes { margin: 1.5rem 0; max-width: 28rem; }
+.notes img { border: 1px solid var(--color-border); border-radius: 0.5rem; }
+figcaption { color: var(--color-muted); font-size: 0.875rem; margin-top: 0.5rem; }
+
+input, textarea, button { font: inherit; }
+form { display: grid; grid-template-columns: auto 1fr; gap: 1em; margin-block: 2rem; }
+form label { display: grid; grid-template-columns: subgrid; grid-column: 1 / -1; align-items: baseline; }
+input, textarea { min-width: 0; width: 100%; padding: 0.65em 0.8em; border: 1px solid var(--color-border); border-radius: 0.3rem; color: inherit; background: white; }
+textarea { resize: vertical; }
+button { grid-column: 1 / -1; padding: 0.75em 1em; border: 0; border-radius: 0.3rem; color: white; background: var(--color-accent); cursor: pointer; }
+button:hover { background: oklch(from var(--color-accent) 40% c h); }
+
+.projects { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(15em, 100%), 1fr)); gap: 1em; margin-top: 2rem; }
+.projects article { display: grid; grid-template-rows: subgrid; grid-row: span 3; gap: 1em; min-width: 0; padding: 1rem; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 0.5rem; }
+.projects h2, .projects p { margin: 0; }
+.projects img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 0.25rem; }
+.project-status { display: block; color: var(--color-muted); font-size: 0.8rem; margin-top: 0.65rem; }
+
+.resume-header { margin-bottom: 2rem; }
+.resume-contact { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
+.resume-section { border-top: 1px solid var(--color-border); padding-block: 1.5rem; }
+.resume-section > h2 { color: var(--color-accent); margin-top: 0; }
+.resume-entry + .resume-entry { margin-top: 2rem; }
+.entry-heading { display: flex; justify-content: space-between; gap: 0.5rem 1rem; flex-wrap: wrap; align-items: baseline; }
+.entry-heading h3 { margin: 0; }
+.entry-heading p { margin: 0; color: var(--color-muted); font-size: 0.9rem; }
+.role { margin-block: 0.4rem; font-weight: 600; }
+.resume-entry ul { padding-left: 1.2rem; margin-block: 0.75rem 0; }
+.resume-entry li + li { margin-top: 0.5rem; }
+.skills { display: grid; grid-template-columns: 10rem 1fr; gap: 0.75rem 1.5rem; }
+.skills dt { font-weight: 650; }
+.skills dd { margin: 0; }
+
+@media (max-width: 35rem) {
+  body { padding: 0.75rem; }
+  nav { flex-wrap: wrap; margin-bottom: 2rem; }
+  nav a { flex-basis: 30%; }
+  form { grid-template-columns: 1fr; }
+  form label { gap: 0.4rem; }
+  .skills { grid-template-columns: 1fr; gap: 0.35rem; }
+  .skills dd { margin-bottom: 0.75rem; }
+}
+
+@media print {
+  nav, footer { display: none; }
+  body { max-width: none; padding: 0; font-size: 10pt; background: white; color: black; }
+  h1 { font-size: 28pt; }
+  .resume-section { padding-block: 0.7rem; }
+  .resume-entry { break-inside: avoid; }
+  a { color: inherit; }
 }

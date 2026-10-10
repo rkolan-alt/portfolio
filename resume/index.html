@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume | Rishab Kolan</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav aria-label="Main navigation">
+        <a href="../">Home</a>
+        <a href="../projects/">Projects</a>
+        <a href="../contact/">Contact</a>
+        <a href="../resume/" class="current" aria-current="page">Resume</a>
+        <a href="https://github.com/rkolan-alt" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </nav>
+    <main>
+        <header class="resume-header">
+            <p class="eyebrow">Resume</p>
+            <h1>Rishab Kolan</h1>
+            <p class="intro">Data Science student · University of California, San Diego</p>
+            <div class="resume-contact">
+                <a href="https://github.com/rkolan-alt">GitHub</a>
+                <a href="https://www.linkedin.com/in/rishab-kolan-721435272/">LinkedIn</a>
+            </div>
+        </header>
+        <section class="resume-section">
+            <h2>Education</h2>
+            <article class="resume-entry">
+                <div class="entry-heading"><h3>University of California, San Diego</h3><p>Expected June 2028 · La Jolla, CA</p></div>
+                <p class="role">B.S. in Data Science · GPA: 3.57</p>
+                <p><strong>Coursework:</strong> Principles of Data Science; Programming and Data Structures for Data Science; Data Structures and Algorithms for Data Science; Linear Algebra; Theoretical Foundations of Data Science; Practice of Data Science.</p>
+            </article>
+        </section>
+        <section class="resume-section">
+            <h2>Technical skills</h2>
+            <dl class="skills">
+                <dt>Languages</dt><dd>Java, Python, SQL, R, HTML, CSS, JavaScript, TypeScript</dd>
+                <dt>Libraries &amp; frameworks</dt><dd>React, React Native, Node.js, FastAPI, PyTorch, TensorFlow, scikit-learn</dd>
+                <dt>Tools &amp; technologies</dt><dd>REST APIs, JUnit, Git, GitHub, PostgreSQL, MySQL, AWS, Azure, Docker</dd>
+            </dl>
+        </section>
+        <section class="resume-section">
+            <h2>Experience</h2>
+            <article class="resume-entry">
+                <div class="entry-heading"><h3>UC San Diego Health</h3><p>January 2026–Present</p></div>
+                <p class="role">Data Science Intern · La Jolla, CA</p>
+                <ul><li>Performed Random Forest optimization, cross-validation, training, and feature importance analysis on 2,000+ bacteria count and metabolic flux features to predict fibrosis stages in 100+ patients with 70% accuracy.</li><li>Performed PCA and PLS-DA analysis on patient metabolite data to identify key metabolites in classifying HIV for 100+ patients with and without liver disease.</li><li>Identified 20 key bacteria and metabolites that accelerate fibrosis using Spearman correlation heatmaps and feature importance curves.</li></ul>
+            </article>
+            <article class="resume-entry">
+                <div class="entry-heading"><h3>Center for Community Energy</h3><p>February 2026–May 2026</p></div>
+                <p class="role">Data Science Intern · Encinitas, CA</p>
+                <ul><li>Developed Python scraping and extraction pipelines to collect nonprofit and energy-related data from public sources, IRS filings, and XML records for analysis and reporting.</li><li>Built SQL datasets by linking organizations through EIN identifiers, merging multiple sources, and standardizing records to support federal solar incentive outreach.</li><li>Improved data coverage and quality by integrating external sources, validating contact information, and automating data preparation workflows.</li></ul>
+            </article>
+            <article class="resume-entry">
+                <div class="entry-heading"><h3>Triton NeuroTech @ UC San Diego</h3><p>November 2025–April 2026</p></div>
+                <p class="role">Project Member · La Jolla, CA</p>
+                <ul><li>Built an EMG data collection and preprocessing pipeline using MindRove Connect, LibEMG, and SciPy for filtering, normalization, and sequence generation.</li><li>Designed an LSTM gesture recognition model in TensorFlow, with Grey Wolf Optimization (GWO) under evaluation for optimization.</li><li>Outlined a real-time gesture-to-movement mapping system with thresholding to reduce false triggers.</li></ul>
+            </article>
+        </section>
+        <section class="resume-section">
+            <h2>Projects</h2>
+            <article class="resume-entry">
+                <div class="entry-heading"><h3>Posterboy</h3><p>July 2026</p></div>
+                <p class="role">React · TypeScript · FastAPI · PostgreSQL</p>
+                <ul><li>Developed a full-stack app that analyzes Spotify listening history and recommends personalized album posters.</li><li>Engineered Spotify OAuth 2.0 and a reciprocal-rank scoring pipeline to aggregate users’ top albums.</li><li>Built a scikit-learn K-Means pipeline to recommend album covers with visually similar color palettes.</li><li>Containerized the application with Docker and deployed through GitHub Actions, Vercel, and GCP.</li></ul>
+            </article>
+            <article class="resume-entry">
+                <div class="entry-heading"><h3>Prosthetic Arm Gesture Mapping Tool</h3><p>November 2025–Present</p></div>
+                <p class="role">Python · TensorFlow · SciPy</p>
+                <ul><li>Built an LSTM-based model to classify multi-channel biosignal data for gesture mapping.</li><li>Developed a SciPy pipeline for signal filtering, normalization, and sequence generation.</li><li>Improved model performance by 20% to achieve 97.32% accuracy through preprocessing optimization, sequence overlap tuning, dropout, and early stopping.</li></ul>
+            </article>
+            <p><a href="https://github.com/rkolan-alt/Posterboy">Posterboy source code</a> · <a href="https://posterboy-6myhsnvuja-uc.a.run.app/">Posterboy website</a></p>
+        </section>
+    </main>
+    <footer>Rishab Kolan · Data Science at UC San Diego</footer>
+</body>
+</html>
