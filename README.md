@@ -1,10 +1,11 @@
 # Rishab Kolan’s portfolio
 
-Personal portfolio for DSC 106, built with HTML and a shared CSS stylesheet.
+Personal portfolio for DSC 106, built with HTML, a shared CSS stylesheet, and JavaScript modules.
 
 - Website: https://rkolan-alt.github.io/portfolio/
 - Repository: https://github.com/rkolan-alt/portfolio
 - Lab instructions: https://dsc106.com/labs/lab02/
+- Lab 3 instructions: https://dsc106.com/labs/lab03/
 
 ## Lab 2 implementation
 
@@ -17,4 +18,14 @@ Personal portfolio for DSC 106, built with HTML and a shared CSS stylesheet.
 
 The contact form uses `mailto:` and requires a configured email application. It opens a draft with the recipient left blank; LinkedIn is the direct contact channel. The owner’s email address and phone number are omitted from the public site.
 
+## Lab 3 implementation
 
+- Every page loads `global.js` as a module. It creates the shared navigation from an array of pages, highlights the current page automatically, and opens external navigation links in a new tab.
+- Navigation URLs resolve from the module’s location, so the same code works at a local server’s root and under `/portfolio/` on GitHub Pages. Explicit `index.html` URLs highlight the corresponding page too.
+- A theme selector at the top right offers Automatic, Light, and Dark. Automatic follows the operating system; manual choices override it. The selected mode is saved in `localStorage` and restored on refresh and navigation.
+- Text, surfaces, borders, form controls, and navigation hover styles adapt to both color schemes. The selector remains usable if the browser blocks storage.
+- The optional contact-form improvement removes the redundant sender field and builds a percent-encoded `mailto:` URL using `FormData`, preserving spaces, newlines, plus signs, and special characters in the subject and message.
+
+## Local preview
+
+Run `python3 -m http.server 8000` from the repository, then open http://localhost:8000/. Use an HTTP server rather than opening HTML files directly, because JavaScript modules require it.
