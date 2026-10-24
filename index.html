@@ -6,6 +6,7 @@
     <title>Personal site and portfolio | Rishab Kolan</title>
     <link rel="stylesheet" href="style.css">
     <script type="module" src="global.js"></script>
+    <script type="module" src="index.js"></script>
 </head>
 <body>
     <main>
@@ -21,6 +22,22 @@
             <h2>What I’m working on</h2>
             <p>At UC San Diego Health, I analyze bacteria and metabolite data to study liver fibrosis. My work combines predictive modeling, feature importance, and data visualization to understand relationships in patient data.</p>
             <p>I also built <a href="https://github.com/rkolan-alt/Posterboy">Posterboy</a>, a full-stack application that connects Spotify listening history with personalized album posters and color-based recommendations.</p>
+        </section>
+        <section class="home-section" aria-labelledby="latest-projects-heading">
+            <h2 id="latest-projects-heading">Latest Projects</h2>
+            <div class="projects" aria-live="polite" aria-busy="true">
+                <p class="data-status">Loading latest projects…</p>
+            </div>
+            <p><a href="projects/">View all projects →</a></p>
+            <noscript><p>Enable JavaScript to load project cards.</p></noscript>
+        </section>
+        <section class="home-section" aria-labelledby="github-heading">
+            <h2 id="github-heading">GitHub activity</h2>
+            <div id="profile-stats" aria-live="polite" aria-busy="true">
+                <p class="data-status">Loading GitHub statistics…</p>
+            </div>
+            <p><a href="https://github.com/rkolan-alt">View my GitHub profile →</a></p>
+            <noscript><p>Enable JavaScript to load live GitHub statistics.</p></noscript>
         </section>
         <section class="home-section">
             <h2>Learning through data</h2>

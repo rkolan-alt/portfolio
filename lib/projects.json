@@ -1,0 +1,103 @@
+[
+  {
+    "title": "Lab 4: Data-driven Portfolio",
+    "year": 2026,
+    "image": "images/project-placeholder.svg",
+    "imageAlt": "Abstract chart illustration used as a project preview placeholder.",
+    "description": "Moved project content into a shared JSON file, built a reusable card renderer, added an automatic project count, and loaded live profile statistics from the GitHub API.",
+    "status": "DSC 106 coursework",
+    "url": "https://github.com/rkolan-alt/portfolio"
+  },
+  {
+    "title": "Lab 3: JavaScript & Themes",
+    "year": 2026,
+    "image": "images/project-placeholder.svg",
+    "imageAlt": "Abstract chart illustration used as a project preview placeholder.",
+    "description": "Generated shared navigation with JavaScript, highlighted the current page automatically, and added Automatic, Light, and Dark themes with preferences saved across refreshes and navigation.",
+    "status": "DSC 106 coursework",
+    "url": "https://github.com/rkolan-alt/portfolio/commit/eabbbc7edbe534ead871ecca71fd96f20c694fe4"
+  },
+  {
+    "title": "Lab 2: Responsive CSS",
+    "year": 2026,
+    "image": "images/project-placeholder.svg",
+    "imageAlt": "Abstract chart illustration used as a project preview placeholder.",
+    "description": "Styled a personal portfolio with Flexbox navigation, responsive project cards, CSS subgrid alignment, a contact form, and a resume page that adapts to smaller screens.",
+    "status": "DSC 106 coursework",
+    "url": "https://github.com/rkolan-alt/portfolio/commit/5a8825c"
+  },
+  {
+    "title": "Lab 1: Personal Portfolio",
+    "year": 2026,
+    "image": "images/project-placeholder.svg",
+    "imageAlt": "Abstract chart illustration used as a project preview placeholder.",
+    "description": "Created the original HTML portfolio with a homepage, projects page, contact form, shared navigation links, and an image.",
+    "status": "DSC 106 coursework",
+    "url": "https://github.com/rkolan-alt/portfolio/commit/1107fd4"
+  },
+  {
+    "title": "Posterboy",
+    "year": 2026,
+    "image": "images/project-placeholder.svg",
+    "imageAlt": "Abstract chart illustration used as a project preview placeholder.",
+    "description": "A React and TypeScript application that uses Spotify listening history to recommend personalized album posters. FastAPI and PostgreSQL power the backend, with K-Means clustering to find covers with similar color palettes.",
+    "status": "July 2026 · Completed project",
+    "url": "https://github.com/rkolan-alt/Posterboy"
+  },
+  {
+    "title": "Prosthetic Arm Gesture Mapping Tool",
+    "year": 2025,
+    "image": "images/project-placeholder.svg",
+    "imageAlt": "Abstract chart illustration used as a project preview placeholder.",
+    "description": "An LSTM-based gesture recognition model for multi-channel biosignals. A SciPy preprocessing pipeline and training improvements increased performance by 20%, reaching 97.32% accuracy.",
+    "status": "Started November 2025 · Ongoing resume project"
+  },
+  {
+    "title": "Categorical Data Visualization",
+    "year": 2026,
+    "image": "images/project-placeholder.svg",
+    "imageAlt": "Abstract chart illustration used as a project preview placeholder.",
+    "description": "A space for a future data visualization project. This placeholder will be replaced with the project’s question, methods, findings, and a link when the work is complete.",
+    "status": "Placeholder · Planned coursework"
+  },
+  {
+    "title": "Comparing Distributions",
+    "year": 2026,
+    "image": "images/project-placeholder.svg",
+    "imageAlt": "Abstract chart illustration used as a project preview placeholder.",
+    "description": "A space for a future data visualization project. This placeholder will be replaced with the project’s question, methods, findings, and a link when the work is complete.",
+    "status": "Placeholder · Planned coursework"
+  },
+  {
+    "title": "Time Series Exploration",
+    "year": 2026,
+    "image": "images/project-placeholder.svg",
+    "imageAlt": "Abstract chart illustration used as a project preview placeholder.",
+    "description": "A space for a future data visualization project. This placeholder will be replaced with the project’s question, methods, findings, and a link when the work is complete.",
+    "status": "Placeholder · Planned coursework"
+  },
+  {
+    "title": "Mapping Geographic Data",
+    "year": 2026,
+    "image": "images/project-placeholder.svg",
+    "imageAlt": "Abstract chart illustration used as a project preview placeholder.",
+    "description": "A space for a future data visualization project. This placeholder will be replaced with the project’s question, methods, findings, and a link when the work is complete.",
+    "status": "Placeholder · Planned coursework"
+  },
+  {
+    "title": "Interactive Data Dashboard",
+    "year": 2026,
+    "image": "images/project-placeholder.svg",
+    "imageAlt": "Abstract chart illustration used as a project preview placeholder.",
+    "description": "A space for a future data visualization project. This placeholder will be replaced with the project’s question, methods, findings, and a link when the work is complete.",
+    "status": "Placeholder · Planned coursework"
+  },
+  {
+    "title": "Final Visualization Project",
+    "year": 2026,
+    "image": "images/project-placeholder.svg",
+    "imageAlt": "Abstract chart illustration used as a project preview placeholder.",
+    "description": "A space for a future data visualization project. This placeholder will be replaced with the project’s question, methods, findings, and a link when the work is complete.",
+    "status": "Placeholder · Planned coursework"
+  }
+]
