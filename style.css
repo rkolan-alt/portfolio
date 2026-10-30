@@ -51,6 +51,32 @@ button:hover { background: color-mix(in oklch, var(--color-accent) 85%, canvaste
 .projects img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 0.25rem; }
 .project-status { display: block; color: var(--color-muted); font-size: 0.8rem; margin-top: 0.65rem; }
 .data-status { grid-column: 1 / -1; color: var(--color-muted); }
+
+/* Lab 5: a year chart and search share one set of project filters. */
+.project-explorer { margin-block: 2rem; padding: 1.25rem; border: 1px solid var(--color-border); border-radius: 0.5rem; background: var(--color-surface); }
+.project-explorer h2 { margin-top: 0; }
+#chart-help, #chart-summary { color: var(--color-muted); font-size: 0.9rem; }
+.chart-container { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; }
+#projects-plot { flex: 0 1 16rem; width: 100%; max-width: 20em; aspect-ratio: 1; overflow: visible; margin-block: 1rem; }
+#projects-plot path { cursor: pointer; stroke: canvas; stroke-width: 0.6; transition: opacity 180ms, fill 180ms; }
+#projects-plot:has(path:hover) path:not(:hover), #projects-plot:has(path:focus-visible) path:not(:focus-visible) { opacity: 0.45; }
+#projects-plot path:focus-visible { outline: none; stroke: canvastext; stroke-width: 1.4; }
+.legend { flex: 1 1 12rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(9em, 100%), 1fr)); gap: 1rem; padding: 1rem; margin: 0; list-style: none; border: 1px solid var(--color-border); border-radius: 0.4rem; }
+.legend-item { min-width: 0; }
+.legend-item button { display: flex; align-items: center; justify-content: center; gap: 0.5em; width: 100%; padding: 0.65em; background: canvas; color: canvastext; border: 1px solid var(--color-border); }
+.legend-item button:hover { background: var(--color-surface); }
+.legend-item em { font-style: normal; color: var(--color-muted); }
+.swatch { display: inline-block; flex: 0 0 1em; width: 1em; aspect-ratio: 1; border-radius: 0.2em; background: var(--color); }
+#projects-plot path.selected { fill: oklch(65% 0.23 0); stroke: canvastext; stroke-width: 1; }
+.legend-item.selected { --color: oklch(65% 0.23 0) !important; }
+.legend-item.selected button { border: 2px solid var(--color); font-weight: 700; }
+.project-filters > label { display: block; margin-bottom: 0.5rem; font-weight: 600; }
+.filter-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 0.75rem; margin-block: 0.75rem; }
+.filter-actions button { width: auto; font-size: 0.875rem; padding: 0.5em 0.75em; }
+#selected-year { font-weight: 600; }
+#results-summary { color: var(--color-muted); }
+[hidden] { display: none !important; }
+@media (prefers-reduced-motion: reduce) { #projects-plot path { transition: none; } }
 #profile-stats dl { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.5rem 1rem; padding: 1.25rem; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 0.5rem; }
 #profile-stats dt { grid-row: 1; font-size: 0.875rem; color: var(--color-muted); }
 #profile-stats dd { grid-row: 2; margin: 0; font-size: 2rem; font-weight: 650; }

@@ -13,7 +13,26 @@
         <h1 class="projects-title">Projects</h1>
         <p class="intro">Software, machine learning, and data visualization.</p>
         <p>Coursework and resume projects, followed by clearly labeled placeholders for future work. Years on planned projects indicate the planned year.</p>
-        <div class="projects" aria-live="polite" aria-busy="true">
+        <section class="project-explorer" aria-labelledby="projects-by-year-heading">
+            <h2 id="projects-by-year-heading">Projects by year</h2>
+            <p id="chart-help">Search updates the chart. Select a slice or year below to filter the cards; select it again to show all years.</p>
+            <div class="chart-container">
+                <svg id="projects-plot" viewBox="-50 -50 100 100" role="group" aria-labelledby="projects-by-year-heading" aria-describedby="chart-help chart-summary"></svg>
+                <ul class="legend" aria-label="Filter projects by year"></ul>
+            </div>
+            <p id="chart-summary" class="data-status">Loading project years…</p>
+        </section>
+        <div class="project-filters">
+            <label for="project-search">Search projects</label>
+            <input id="project-search" class="searchBar" type="search" placeholder="Search titles, descriptions, years…" aria-controls="project-results projects-plot" disabled>
+            <div class="filter-actions">
+                <span id="selected-year" hidden></span>
+                <button class="clear-year" type="button" hidden>Clear year filter</button>
+                <button class="clear-filters" type="button" hidden>Clear all filters</button>
+            </div>
+        </div>
+        <p id="results-summary" role="status" aria-live="polite"></p>
+        <div id="project-results" class="projects" aria-busy="true">
             <p class="data-status">Loading projects…</p>
         </div>
         <noscript><p>Enable JavaScript to load project cards.</p></noscript>
