@@ -1,0 +1,11 @@
+{
+  "name": "rishab-kolan-portfolio",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "analyze": "elocuent -d . -o meta/loc.csv --spaces 2"
+  },
+  "devDependencies": {
+    "elocuent": "^0.0.4"
+  }
+}

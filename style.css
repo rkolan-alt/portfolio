@@ -77,6 +77,37 @@ button:hover { background: color-mix(in oklch, var(--color-accent) 85%, canvaste
 #results-summary { color: var(--color-muted); }
 [hidden] { display: none !important; }
 @media (prefers-reduced-motion: reduce) { #projects-plot path { transition: none; } }
+
+/* Lab 6: repository statistics, commit scatterplot, and linked selection. */
+.meta-note, #commit-chart-help { color: var(--color-muted); font-size: 0.9rem; }
+#meta-status { margin-block: 1.5rem; color: var(--color-muted); }
+dl.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-bottom: 2.5rem; }
+dl.stats > div { padding: 1rem; border: 1px solid var(--color-border); border-radius: 0.5rem; background: var(--color-surface); }
+dl.stats dt { font-size: 0.85rem; color: var(--color-muted); }
+dl.stats dd { margin: 0.4rem 0 0; font-size: 1.8rem; font-weight: 650; }
+.commit-explorer { border-top: 1px solid var(--color-border); padding-top: 1rem; }
+#chart { width: 100%; margin-block: 1.5rem; }
+#chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.meta-gridlines .domain { display: none; }
+.meta-gridlines line { stroke: var(--color-border); stroke-opacity: 0.45; }
+.meta-axis { color: var(--color-muted); font: 0.75rem system-ui, sans-serif; }
+.axis-label { fill: currentColor; font-size: 0.8rem; }
+.dots circle { fill: var(--color-accent); fill-opacity: 0.7; stroke: canvas; stroke-width: 1; cursor: pointer; transform-origin: center; transform-box: fill-box; transition: transform 160ms, fill-opacity 160ms; }
+.dots circle:hover, .dots circle:focus-visible { transform: scale(1.5); fill-opacity: 1; stroke: canvastext; outline: none; }
+.dots circle.selected { fill: oklch(65% 0.23 0); stroke: canvastext; stroke-width: 1.5; }
+.commit-brush .selection { fill: var(--color-accent); fill-opacity: 0.15; stroke: var(--color-accent); stroke-dasharray: 5 3; }
+.commit-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; }
+.commit-actions label { font-weight: 600; font-size: 0.9rem; }
+.commit-actions select { min-width: 0; max-width: 100%; padding: 0.55em; background: canvas; color: canvastext; border: 1px solid var(--color-border); border-radius: 0.3rem; }
+.commit-actions button { font-size: 0.85rem; }
+button:disabled { opacity: 0.45; cursor: default; }
+#selection-count { font-weight: 650; }
+dl.info, .language-breakdown { display: grid; grid-template-columns: auto 1fr; gap: 0.5rem 1rem; }
+dl.info dt, .language-breakdown dt { color: var(--color-muted); }
+dl.info dd, .language-breakdown dd { margin: 0; overflow-wrap: anywhere; }
+.tooltip { position: fixed; z-index: 10; top: 1rem; left: 1rem; margin: 0; max-width: min(24rem, calc(100vw - 1rem)); padding: 1rem; background: canvas; color: canvastext; border: 1px solid var(--color-border); border-radius: 0.5rem; box-shadow: 0 0.4rem 1.5rem #0003; font-size: 0.85rem; }
+@media (max-width: 35rem) { dl.stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (prefers-reduced-motion: reduce) { .dots circle { transition: none; } }
 #profile-stats dl { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.5rem 1rem; padding: 1.25rem; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 0.5rem; }
 #profile-stats dt { grid-row: 1; font-size: 0.875rem; color: var(--color-muted); }
 #profile-stats dd { grid-row: 2; margin: 0; font-size: 2rem; font-weight: 650; }

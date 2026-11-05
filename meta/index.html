@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta | Rishab Kolan</title>
+    <link rel="stylesheet" href="../style.css?v=6">
+    <script type="module" src="../global.js?v=6"></script>
+    <script type="module" src="main.js?v=6"></script>
+</head>
+<body>
+    <main>
+        <p class="eyebrow">Behind the portfolio</p>
+        <h1>Meta</h1>
+        <p class="intro">An exploration of this website’s code and the commits that shaped it.</p>
+        <p class="meta-note">These statistics describe the HTML, CSS, and JavaScript lines currently in the repository. Commits whose lines were all replaced are absent. Hours use each commit’s recorded time zone; dates use your browser’s time zone.</p>
+        <p id="meta-status" role="status">Loading repository analysis…</p>
+        <section aria-labelledby="stats-heading">
+            <h2 id="stats-heading">The codebase at a glance</h2>
+            <div id="stats"></div>
+        </section>
+        <section class="commit-explorer" aria-labelledby="commit-chart-heading">
+            <h2 id="commit-chart-heading">Commits by time of day</h2>
+            <p id="commit-chart-help">Each circle is a commit. Circle area represents lines attributed to that commit. Hover or focus a dot for details; drag across the plot to select a group.</p>
+            <div id="chart" aria-busy="true"></div>
+            <div class="commit-actions">
+                <label for="commit-picker">Inspect a commit</label>
+                <select id="commit-picker" disabled><option value="">Choose a commit…</option></select>
+                <button id="select-all-commits" type="button" disabled>Select all commits</button>
+                <button id="clear-selection" type="button" disabled>Clear selection</button>
+            </div>
+            <p id="selection-count" role="status">No commits selected</p>
+            <h3>Languages in the selection</h3>
+            <p id="language-help" class="meta-note">Select commits to see their line counts and proportions by language.</p>
+            <dl id="language-breakdown" class="language-breakdown"></dl>
+        </section>
+        <noscript><p>Enable JavaScript to load the code statistics and interactive chart.</p></noscript>
+    </main>
+    <dl id="commit-tooltip" class="info tooltip" aria-label="Commit details" hidden>
+        <dt>Commit</dt><dd><a id="commit-link" href="https://github.com/rkolan-alt/portfolio" target="_blank" rel="noopener noreferrer"></a></dd>
+        <dt>Date</dt><dd id="commit-date"></dd>
+        <dt>Time</dt><dd id="commit-time"></dd>
+        <dt>Author</dt><dd id="commit-author"></dd>
+        <dt>Lines</dt><dd id="commit-lines"></dd>
+    </dl>
+    <footer>Rishab Kolan · Data Science at UC San Diego</footer>
+</body>
+</html>

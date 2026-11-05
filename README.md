@@ -7,6 +7,7 @@ Personal portfolio for DSC 106, built with HTML, a shared CSS stylesheet, and Ja
 - Lab instructions: https://dsc106.com/labs/lab02/
 - Lab 3 instructions: https://dsc106.com/labs/lab03/
 - Lab 4 instructions: https://dsc106.com/labs/lab04/
+- Lab 6 instructions: https://dsc106.com/labs/lab06/
 
 ## Lab 2 implementation
 
@@ -36,6 +37,24 @@ The contact form uses `mailto:` and requires a configured email application. It 
 - Relative resource URLs resolve from the JavaScript modules, so cards and images work locally and on GitHub Pages under `/portfolio/`.
 
 To add or edit a project, update `lib/projects.json`. Put the latest entries first; the homepage displays the first three. Use paths relative to the site root for project images and internal links. Keep placeholder projects labeled until the work is completed.
+
+## Lab 6 implementation
+
+- The Meta page analyzes the repository’s current HTML, CSS, and JavaScript with the lab’s `elocuent` tool. It displays total source lines, represented commits, source file count, average file length, longest line, and maximum indentation depth.
+- A responsive D3 scatterplot maps commit timestamps to the horizontal axis and the recorded commit-local hour to the vertical axis. A square-root radius scale makes circle areas proportional to attributed lines; larger circles render first so smaller circles remain reachable.
+- Hovering or focusing a commit shows its GitHub link, date, time zone, author, and line count. Dragging a brush selects commits and updates the selected count and language proportions. Keyboard users can toggle focused dots with Enter or Space, inspect commits with a dropdown, or select all and clear the selection with buttons.
+- This is a snapshot of lines currently present, not a full diff history: commits whose lines have all been replaced do not appear, and attributed line counts do not represent all historical additions and deletions.
+
+To regenerate the committed analysis after changing and committing source files:
+
+```sh
+npm ci
+npm run analyze
+git add meta/loc.csv
+git commit -m "Refresh code analysis snapshot"
+```
+
+The snapshot-only commit does not alter analyzed source files, so it does not need another analysis run. `node_modules/` is excluded from Git.
 
 ## Local preview
 
