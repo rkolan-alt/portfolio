@@ -149,3 +149,47 @@ dl.info dd, .language-breakdown dd { margin: 0; overflow-wrap: anywhere; }
   .resume-entry { break-inside: avoid; }
   a { color: inherit; }
 }
+
+/* Lab 8: one timeline links the narrative, commit plot, and file units. */
+.commit-timeline { margin-block: 2rem; padding: 1rem; border: 1px solid var(--color-border); border-radius: 0.5rem; background: var(--color-surface); }
+.commit-timeline label { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem; font-weight: 650; }
+.commit-timeline time { color: var(--color-accent); }
+.commit-timeline input { padding: 0; margin-block: 1rem; cursor: pointer; }
+.commit-timeline button { padding: 0.5em 0.75em; font-size: 0.85rem; }
+#scrolly-1 { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 1.5rem; align-items: start; position: relative; }
+#scatter-story { min-width: 0; padding-block: 25vh; }
+.step { min-height: 70vh; padding: 1.25rem 1rem; border-top: 3px solid var(--color-border); opacity: 0.55; transition: opacity 200ms, border-color 200ms; overflow-wrap: anywhere; }
+.step.is-active { opacity: 1; border-color: var(--color-accent); }
+.step h3 { line-height: 1.3; }
+#scatter-plot { position: sticky; top: 1rem; min-width: 0; height: fit-content; max-height: calc(100vh - 2rem); overflow-y: auto; padding: 0.5rem; background: canvas; }
+#scatter-plot #chart { margin-block: 0.5rem; }
+#scatter-plot h3 { margin-block: 1rem 0.5rem; }
+#timeline-summary { font-weight: 650; color: var(--color-accent); }
+#scatter-plot .commit-actions { gap: 0.5rem; }
+#scatter-plot .commit-actions button { padding: 0.5em; }
+#scatter-plot #selection-count { margin-block: 0.6rem; }
+.dots circle { transition: r 300ms, cx 300ms, cy 300ms, transform 160ms, fill-opacity 160ms; }
+@starting-style { .dots circle { r: 0; } }
+.file-explorer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--color-border); }
+#file-legend { display: flex; flex-wrap: wrap; gap: 1rem; list-style: none; padding: 0; font-size: 0.85rem; }
+#file-legend li { display: flex; align-items: center; gap: 0.5rem; }
+#file-legend b { font-weight: 500; }
+#files { display: grid; grid-template-columns: minmax(8rem, 1fr) minmax(0, 3fr); gap: 1rem; }
+#files > div { display: grid; grid-column: 1 / -1; grid-template-columns: subgrid; border-top: 1px solid var(--color-border); padding-top: 1rem; }
+#files dt { overflow-wrap: anywhere; }
+#files small { display: block; color: var(--color-muted); margin-top: 0.3rem; }
+#files dd { margin: 0; display: flex; flex-wrap: wrap; align-content: start; align-items: start; gap: 0.15em; padding-top: 0.3rem; }
+.loc { flex: 0 0 0.5em; width: 0.5em; aspect-ratio: 1; background: var(--color); border-radius: 50%; }
+@media (max-width: 40rem) {
+  #scrolly-1 { display: block; }
+  #scatter-plot { top: 0; z-index: 2; max-height: 58vh; border-bottom: 1px solid var(--color-border); }
+  #scatter-story { padding-block: 0; }
+  #scatter-plot { margin-bottom: 1rem; }
+  #scrolly-1 { display: flex; flex-direction: column; }
+  #scatter-plot { order: -1; width: 100%; }
+  #scatter-story { width: 100%; }
+  .step { min-height: 85vh; padding-top: 1rem; }
+  #files { grid-template-columns: minmax(7rem, 1fr) minmax(0, 2fr); }
+}
+@media (prefers-reduced-motion: reduce) { .dots circle, .step { transition: none; } }
+@media print { #scrolly-1 { display: block; } #scatter-plot { position: static; max-height: none; } .step { min-height: 0; opacity: 1; } #scatter-story { padding: 0; } }

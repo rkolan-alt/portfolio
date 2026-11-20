@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meta | Rishab Kolan</title>
-    <link rel="stylesheet" href="../style.css?v=6">
+    <link rel="stylesheet" href="../style.css?v=8">
     <script type="module" src="../global.js?v=6"></script>
-    <script type="module" src="main.js?v=6"></script>
+    <script type="module" src="main.js?v=8"></script>
 </head>
 <body>
     <main>
@@ -15,31 +15,51 @@
         <p class="intro">An exploration of this website’s code and the commits that shaped it.</p>
         <p class="meta-note">These statistics describe the HTML, CSS, and JavaScript lines currently in the repository. Commits whose lines were all replaced are absent. Hours use each commit’s recorded time zone; dates use your browser’s time zone.</p>
         <p id="meta-status" role="status">Loading repository analysis…</p>
+        <div class="commit-timeline">
+            <label for="commit-progress">Show commits until <time id="commit-time"></time></label>
+            <input id="commit-progress" type="range" min="0" max="100" step="0.01" value="100" disabled>
+            <button id="show-all-commits" type="button" disabled>Show full timeline</button>
+        </div>
         <section aria-labelledby="stats-heading">
             <h2 id="stats-heading">The codebase at a glance</h2>
             <div id="stats"></div>
         </section>
         <section class="commit-explorer" aria-labelledby="commit-chart-heading">
-            <h2 id="commit-chart-heading">Commits by time of day</h2>
+            <h2 id="commit-chart-heading">A codebase, one commit at a time</h2>
+            <p>Scroll through the story to reveal commits in chronological order, or explore any point with the slider. <a href="#file-heading">Jump to the file visualization.</a></p>
+            <div id="scrolly-1">
+            <div id="scatter-story" aria-label="Commit narrative"></div>
+            <div id="scatter-plot">
+            <p id="timeline-summary" role="status"></p>
             <p id="commit-chart-help">Each circle is a commit. Circle area represents lines attributed to that commit. Hover or focus a dot for details; drag across the plot to select a group.</p>
             <div id="chart" aria-busy="true"></div>
             <div class="commit-actions">
                 <label for="commit-picker">Inspect a commit</label>
                 <select id="commit-picker" disabled><option value="">Choose a commit…</option></select>
-                <button id="select-all-commits" type="button" disabled>Select all commits</button>
+                <button id="select-all-commits" type="button" disabled>Select visible commits</button>
                 <button id="clear-selection" type="button" disabled>Clear selection</button>
             </div>
             <p id="selection-count" role="status">No commits selected</p>
             <h3>Languages in the selection</h3>
             <p id="language-help" class="meta-note">Select commits to see their line counts and proportions by language.</p>
             <dl id="language-breakdown" class="language-breakdown"></dl>
+            </div>
+            </div>
+        </section>
+        <section class="file-explorer" aria-labelledby="file-heading">
+            <h2 id="file-heading">The race for the biggest file</h2>
+            <p>One dot represents one currently surviving line, colored by language. Files are ranked by the number of lines visible at the selected time.</p>
+            <p class="meta-note">This is a view of line attribution in today’s code, rather than a reconstruction of each historical file. Earlier versions and deleted lines are not included.</p>
+            <ul id="file-legend" aria-label="Language colors"></ul>
+            <p id="file-summary" role="status"></p>
+            <dl id="files"></dl>
         </section>
         <noscript><p>Enable JavaScript to load the code statistics and interactive chart.</p></noscript>
     </main>
     <dl id="commit-tooltip" class="info tooltip" aria-label="Commit details" hidden>
         <dt>Commit</dt><dd><a id="commit-link" href="https://github.com/rkolan-alt/portfolio" target="_blank" rel="noopener noreferrer"></a></dd>
         <dt>Date</dt><dd id="commit-date"></dd>
-        <dt>Time</dt><dd id="commit-time"></dd>
+        <dt>Time</dt><dd id="commit-tooltip-time"></dd>
         <dt>Author</dt><dd id="commit-author"></dd>
         <dt>Lines</dt><dd id="commit-lines"></dd>
     </dl>

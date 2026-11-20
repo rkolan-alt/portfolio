@@ -59,3 +59,15 @@ The snapshot-only commit does not alter analyzed source files, so it does not ne
 ## Local preview
 
 Run `python3 -m http.server 8000` from the repository, then open http://localhost:8000/. Use an HTTP server rather than opening HTML files directly, because JavaScript modules require it.
+
+## Lab 8 implementation
+
+Lab 8 builds on the portfolio Meta page from Lab 6; the separate bike-map project in Lab 7 is not a prerequisite.
+
+- A labeled time slider filters commits, summary statistics, and file units together. Its date label and full-timeline button support direct exploration.
+- Chronological commit narratives use Scrollama to reveal commits as each chapter crosses the viewport. The scatterplot remains sticky beside the story on desktop and above it on mobile.
+- The chart reuses one SVG and keys circles by commit ID. Fixed full-timeline axes and a consistent area scale keep comparisons stable; CSS entry animations respect reduced-motion settings.
+- The file visualization ranks files by visible line count, with one colored dot per surviving source line and a language legend. It responds to both scrolling and the slider.
+- The existing tooltips, keyboard inspection, brush, and selection language breakdown remain available for visible commits. Line attribution is explicitly distinguished from full historical file contents.
+
+Lab 8 checkoff still requires a narrated screen recording of no more than one minute: demonstrate the scrolling scatterplot, show the file units, and explain the most interesting thing learned.
