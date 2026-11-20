@@ -13,6 +13,8 @@ let xScale;
 let yScale;
 let rScale;
 let scroller;
+let viewportChapter;
+let scrollFrame;
 let selectedIds = new Set();
 const progress = document.querySelector('#commit-progress');
 const colors = d3.scaleOrdinal().domain(['html', 'css', 'js']).range(d3.schemeTableau10);
@@ -246,6 +248,19 @@ function updateFileDisplay(lines) {
   document.querySelector('#file-summary').textContent = `${files.length} files · ${lines.length.toLocaleString()} dots at the selected time`;
 }
 
+function syncStoryToViewport() {
+  const steps = [...document.querySelectorAll('#scatter-story .step')];
+  const reached = steps.filter((step) => step.getBoundingClientRect().top <= innerHeight * 0.6);
+  const current = reached.at(-1);
+  if (!current) {
+    viewportChapter = null;
+    return;
+  }
+  if (viewportChapter === current.__data__.id) return;
+  viewportChapter = current.__data__.id;
+  setCutoff(current.__data__.datetime);
+}
+
 function renderStory() {
   const steps = d3.select('#scatter-story').selectAll('.step').data(commits, (d) => d.id)
     .join('article').attr('class', 'step');
@@ -296,13 +311,15 @@ try {
   document.querySelector('#show-all-commits').disabled = false;
   scroller = scrollama();
   scroller.setup({ step: '#scatter-story .step', offset: 0.6 })
-    .onStepEnter(() => {
-      // Resolve the viewport's chapter, including when an anchor jump skips steps.
-      const steps = [...document.querySelectorAll('#scatter-story .step')];
-      const reached = steps.filter((step) => step.getBoundingClientRect().top <= innerHeight * 0.6);
-      const current = reached.at(-1) ?? steps[0];
-      setCutoff(current.__data__.datetime);
+    .onStepEnter(syncStoryToViewport);
+  // Anchor jumps may skip every intersection observed by Scrollama.
+  window.addEventListener('scroll', () => {
+    if (scrollFrame) return;
+    scrollFrame = requestAnimationFrame(() => {
+      scrollFrame = null;
+      syncStoryToViewport();
     });
+  }, { passive: true });
   document.querySelector('#meta-status').textContent = `Analysis includes ${commits.length} commits represented in the current source files.`;
   let previousWidth = chart.clientWidth;
   new ResizeObserver(() => {
